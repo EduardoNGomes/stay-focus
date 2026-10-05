@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stay Focus settings</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script type="module" src="src/options.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#page-title">Skip to settings</a>
+    <main class="mdo-container options-shell mdo-stack">
+      <header class="page-header">
+        <span class="mdo-brand"><span class="mdo-brand__mark" aria-hidden="true">✦</span>Stay Focus</span>
+        <span class="mdo-badge mdo-badge--accent" id="status-badge">Loading…</span>
+      </header>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="mdo-card__eyebrow">Settings</p>
+        <h1 id="page-title">Make room for focus.</h1>
+        <p id="status-description" aria-live="polite">Loading your focus setup…</p>
+      </section>
+
+      <section aria-labelledby="sessions-heading" class="mdo-stack">
+        <div class="section-heading">
+          <div><p class="mdo-card__eyebrow">01 / Schedule</p><h2 id="sessions-heading">Daily sessions</h2></div>
+          <p class="helper-text">Each session has its own sites, time, and mode. Windows repeat every day.</p>
+        </div>
+        <form id="create-session-form" class="mdo-panel mdo-card form-stack">
+          <h3 class="mdo-card__title">New session</h3>
+          <label class="mdo-field"><span class="mdo-label">Name</span><input class="mdo-input" name="name" maxlength="60" placeholder="Work hours" required></label>
+          <div class="time-fields">
+            <label class="mdo-field"><span class="mdo-label">Start</span><input class="mdo-input" name="start" type="time" value="13:00" required></label>
+            <label class="mdo-field"><span class="mdo-label">End</span><input class="mdo-input" name="end" type="time" value="18:00" required></label>
+          </div>
+          <label class="mdo-field"><span class="mdo-label">Mode</span><select class="mdo-input" name="mode"><option value="normal">Normal</option><option value="hardcore">Hardcore</option></select></label>
+          <button class="mdo-button mdo-button--primary" type="submit">Create session</button>
+        </form>
+        <div id="session-list" class="session-grid"></div>
+      </section>
+
+      <section class="mdo-panel mdo-card" aria-labelledby="pomodoro-heading">
+        <p class="mdo-card__eyebrow">02 / Timer</p>
+        <h2 class="mdo-card__title" id="pomodoro-heading">Pomodoro</h2>
+        <p class="mdo-card__description">Focus and break cycles repeat automatically. Selected sites are blocked during focus.</p>
+        <p class="helper-text">In Hardcore, pause, stop, and site removal unlock when the break begins. Timer settings can be changed while stopped.</p>
+        <div class="timer-display"><strong id="timer-countdown">25:00</strong><span id="timer-phase">Ready to focus</span></div>
+        <div id="timer-actions" class="button-row"></div>
+        <form id="pomodoro-settings-form" class="form-stack">
+          <div class="time-fields">
+            <label class="mdo-field"><span class="mdo-label">Focus minutes</span><input class="mdo-input" name="focusMinutes" type="number" min="1" max="240" required></label>
+            <label class="mdo-field"><span class="mdo-label">Break minutes</span><input class="mdo-input" name="breakMinutes" type="number" min="1" max="240" required></label>
+          </div>
+          <label class="mdo-field"><span class="mdo-label">Mode</span><select class="mdo-input" name="mode"><option value="normal">Normal</option><option value="hardcore">Hardcore</option></select></label>
+          <button class="mdo-button mdo-button--primary" type="submit">Save timer</button>
+        </form>
+        <form id="pomodoro-site-form" class="form-stack">
+          <label class="mdo-field"><span class="mdo-label">Website for focus intervals</span><input class="mdo-input" name="site" type="text" inputmode="url" autocomplete="off" placeholder="example.com" required></label>
+          <button class="mdo-button mdo-button--primary" type="submit">Add site</button>
+        </form>
+        <ul id="pomodoro-sites" class="site-list" aria-label="Pomodoro sites"></ul>
+      </section>
+
+      <p class="scope-note">Hardcore locks controls inside Stay Focus during active focus. Chrome can still disable or remove the extension, which stops blocking.</p>
+      <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+      <p class="error-message" id="error" role="alert" hidden></p>
+    </main>
+  </body>
+</html>

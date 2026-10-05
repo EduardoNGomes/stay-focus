@@ -1,0 +1,35 @@
+:root {
+  color-scheme: dark;
+
+  --mdo-color-background: #020618;
+  --mdo-color-surface: rgba(7, 11, 23, 0.78);
+  --mdo-color-surface-strong: #0b1020;
+  --mdo-color-surface-soft: rgba(15, 23, 42, 0.62);
+  --mdo-color-border: rgba(148, 163, 184, 0.16);
+  --mdo-color-border-strong: rgba(148, 163, 184, 0.28);
+  --mdo-color-text: #f8fafc;
+  --mdo-color-text-soft: #cbd5e1;
+  --mdo-color-muted: #94a3b8;
+  --mdo-color-accent: #00dc82;
+  --mdo-color-accent-deep: #00a155;
+  --mdo-color-accent-soft: rgba(0, 220, 130, 0.12);
+  --mdo-color-danger: #ff5555;
+
+  --mdo-font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mdo-font-mono: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+
+  --mdo-radius-sm: 5px;
+  --mdo-radius-md: 8px;
+  --mdo-space-1: 0.25rem;
+  --mdo-space-2: 0.5rem;
+  --mdo-space-3: 0.75rem;
+  --mdo-space-4: 1rem;
+  --mdo-space-6: 1.5rem;
+  --mdo-space-8: 2rem;
+  --mdo-space-12: 3rem;
+
+  --mdo-shadow-panel: 0 28px 80px rgba(0, 0, 0, 0.42);
+  --mdo-shadow-accent: 0 8px 24px rgba(0, 220, 130, 0.17);
+  --mdo-content-width: 860px;
+  --mdo-transition: 180ms ease;
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stay Focus</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script type="module" src="src/popup.js"></script>
+  </head>
+  <body class="popup-body">
+    <main class="popup-shell mdo-stack">
+      <header class="app-header">
+        <span class="mdo-brand"><span class="mdo-brand__mark" aria-hidden="true">✦</span>Stay Focus</span>
+        <span class="mdo-badge" id="status-badge">Loading…</span>
+      </header>
+      <section class="mdo-panel mdo-card" aria-labelledby="status-heading">
+        <p class="mdo-card__eyebrow">Current status</p>
+        <h1 class="mdo-card__title" id="status-heading">Loading…</h1>
+        <p class="mdo-card__description" id="status-description" aria-live="polite"></p>
+      </section>
+      <section class="summary-panel" aria-label="Focus setup">
+        <div class="summary-row"><span>Blocked sites</span><strong id="site-count">—</strong></div>
+        <div class="summary-row"><span>Next change</span><strong id="next-change">—</strong></div>
+      </section>
+      <section aria-labelledby="sessions-heading">
+        <h2 class="section-title" id="sessions-heading">Sessions</h2>
+        <div id="active-sessions" class="compact-list"></div>
+      </section>
+      <section class="mdo-panel mdo-card" aria-labelledby="pomodoro-heading">
+        <p class="mdo-card__eyebrow">Pomodoro</p>
+        <h2 class="mdo-card__title" id="pomodoro-heading">Focus timer</h2>
+        <div class="timer-display"><strong id="timer-countdown">25:00</strong><span id="timer-phase">Ready to focus</span></div>
+        <div id="timer-actions" class="button-row"></div>
+      </section>
+      <button class="mdo-button mdo-button--primary" id="open-options" type="button">Open settings</button>
+      <p class="error-message" id="error" role="alert" hidden></p>
+    </main>
+  </body>
+</html>

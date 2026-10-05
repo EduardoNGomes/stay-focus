@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background: var(--mdo-color-background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--mdo-color-text);
+  font-family: var(--mdo-font-sans);
+  background:
+    radial-gradient(circle at 18% 0, rgba(0, 220, 130, 0.13), transparent 34rem),
+    linear-gradient(180deg, rgba(0, 220, 130, 0.045), transparent 18rem),
+    var(--mdo-color-background);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, #000, transparent 80%);
+}
+
+a { color: var(--mdo-color-accent); text-underline-offset: 3px; }
+button, input, textarea, select { font: inherit; }
+
+:focus-visible {
+  outline: 3px solid rgba(0, 220, 130, 0.3);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
